@@ -1,0 +1,5 @@
+key,value
+package_name,A
+repo_url,test_repo.txt
+test_mode,true
+ascii_mode,true
