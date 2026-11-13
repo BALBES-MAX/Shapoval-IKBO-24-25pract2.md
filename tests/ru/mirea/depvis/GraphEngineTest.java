@@ -11,6 +11,8 @@ import java.util.Set;
  */
 public class GraphEngineTest {
 
+    private static final int EXPECTED_NODE_COUNT = 4;
+
     /**
      * Запускает набор проверок без внешних тестовых фреймворков.
      *
@@ -30,7 +32,7 @@ public class GraphEngineTest {
         GraphEngine engine = new GraphEngine(resolver);
 
         Map<String, List<String>> graph = engine.buildTransitiveGraph("A");
-        assert graph.size() == 4 : "Ожидалось 4 узла в графе";
+        assert graph.size() == EXPECTED_NODE_COUNT : "Ожидалось 4 узла в графе";
 
         Set<String> reverseForD = engine.findReverseDependencies("D");
         assert reverseForD.containsAll(Set.of("B", "C", "A")) : "Неверные обратные зависимости для D";
